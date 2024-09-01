@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List with Status Navigation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="todo-container">
+        <div class="todo-card" id="backlog">
+            <h3>Backlog</h3>
+            <ul id="backlog-list" class="todo-list">
+                <li>Task 1 <button class="nav-right" onclick="moveTask(this, 'todo-list')">→</button><button class="edit-button" onclick="editTask(this)">✎</button></li>
+                <li>Task 2 <button class="nav-right" onclick="moveTask(this, 'todo-list')">→</button><button class="edit-button" onclick="editTask(this)">✎</button></li>
+                <li>Task 3 <button class="nav-right" onclick="moveTask(this, 'todo-list')">→</button><button class="edit-button" onclick="editTask(this)">✎</button></li>
+            </ul>
+        </div>
+        <div class="todo-card" id="todo">
+            <h3>To Do</h3>
+            <ul id="todo-list" class="todo-list">
+                <li>Task 4 <button class="nav-left" onclick="moveTask(this, 'backlog-list')">←</button><button class="nav-right" onclick="moveTask(this, 'ongoing-list')">→</button><button class="edit-button" onclick="editTask(this)">✎</button></li>
+                <li>Task 5 <button class="nav-left" onclick="moveTask(this, 'backlog-list')">←</button><button class="nav-right" onclick="moveTask(this, 'ongoing-list')">→</button><button class="edit-button" onclick="editTask(this)">✎</button></li>
+                <li>Task 6 <button class="nav-left" onclick="moveTask(this, 'backlog-list')">←</button><button class="nav-right" onclick="moveTask(this, 'ongoing-list')">→</button><button class="edit-button" onclick="editTask(this)">✎</button></li>
+            </ul>
+        </div>
+        <div class="todo-card" id="ongoing">
+            <h3>Ongoing</h3>
+            <ul id="ongoing-list" class="todo-list">
+                <li>Task 7 <button class="nav-left" onclick="moveTask(this, 'todo-list')">←</button><button class="nav-right" onclick="moveTask(this, 'done-list')">→</button><button class="edit-button" onclick="editTask(this)">✎</button></li>
+                <li>Task 8 <button class="nav-left" onclick="moveTask(this, 'todo-list')">←</button><button class="nav-right" onclick="moveTask(this, 'done-list')">→</button><button class="edit-button" onclick="editTask(this)">✎</button></li>
+            </ul>
+        </div>
+        <div class="todo-card" id="done">
+            <h3>Done</h3>
+            <ul id="done-list" class="todo-list">
+                <li>Task 9 <button class="nav-left" onclick="moveTask(this, 'ongoing-list')">←</button><button class="edit-button" onclick="editTask(this)">✎</button></li>
+                <li>Task 10 <button class="nav-left" onclick="moveTask(this, 'ongoing-list')">←</button><button class="edit-button" onclick="editTask(this)">✎</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
